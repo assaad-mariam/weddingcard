@@ -76,6 +76,7 @@
 .centered {
       text-align: center; /* Center text horizontally */
       margin-top: 10px; /* Optional margin for spacing */
+      font-size: 15px;
     }
 
 		 .background-div {
@@ -281,7 +282,11 @@
             padding: 8px;
         }
     }
-
+    .saving-message {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #007bff; /* Blue color */
+    }
 
 	</style>
 
@@ -365,9 +370,9 @@
 
 
     <img src="images/testimage2.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
-    <p class="special-font">“So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate”&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp (Mattheu 19:6)  </p>
-    <img src="images/test3.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
-    <img src="images/testimage4.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
+    <img src="images/bibleverse.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
+    <img src="images/carte.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
+    <img src="images/ring.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
 
     <!-- <section id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimage5.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -387,9 +392,9 @@
     </section> -->
     <div class="specific-area">
         <div class="image-container">
-            <img src="images/wedding.png" alt="Image 1">
             <img src="images/ceremony.png" alt="Image 1">
-          <img src="images/testimage7.png" alt="Image 1">
+            <img src="images/ceremonylocation.png" alt="Image 1">
+          <!-- <img src="images/testimage7.png" alt="Image 1"> -->
           <img src="images/testimage6.png" alt="Image 1">
 
           <button class="btn btn-custom">View Location</button>
@@ -401,7 +406,7 @@
         </div>
         
     </div>
-    <img src="images/testimage9.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
+    <img src="images/presence.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
     <div class="btncustcenter">
          <button href="form.html" class="btn btn-custom">I am attending !</button>
     </div>
@@ -416,38 +421,47 @@
         <img src="images/am.png" alt="Overlay Image" class="overlay-image2">
     </div></section>-->
 	
-	<section> <div class="background-div">
+    <img src="images/footer.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
 
-        <img src="images/letsceleb.png" alt="Overlay Image" class="overlay-image">
-        <img src="images/together.png" alt="Overlay Image2" class="overlay-image2">
 
-    </div></section> 
-    
-<!-- <section>
-	<div class="container1">
-        <div class="form-background1">
-            <div class="form-group1"><label> Attendance Form</label></div>
-            <form action="submit.php" method="post">
+    <section>
+        <div class="container1">
+            <div class="form-background1">
+                <div class="form-group1"><label> Attendance Form</label></div>
                 <div class="form-group1">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-				<div class="form-group1">
-                    <label for="name">Guest 1</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-				<div class="form-group1">
-                    <label for="name">Guest 2</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="guest1">Guest 1</label>
+                    <input type="text" id="guest1" name="guest1" required>
                 </div>
                 <div class="form-group1">
-                    <input type="submit" value="Submit">
+                    <label for="guest2">Guest 2</label>
+                    <input type="text" id="guest2" name="guest2" required>
                 </div>
-            </form>
+                <div class="form-group1">
+                    <button type="submit" id="submitbutton">Submit</button>
+                </div>
+                <!-- Message to show when saving data -->
+                <div class="saving-message" id="savingMessage" style="display: none;">Saving Your names!</div>
+            </div>
         </div>
-    </div>
-</section> -->
+    </section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#submitbutton").click(function(){
+            var guest_1 = $("#guest1").val();
+            var guest_2 = $("#guest2").val();
+    
+            // Show the saving message
+            $("#savingMessage").show();
 
+            // Redirect to wedding.php with data in query parameters
+            var url = "http://zeta.infinityfreeapp.com/wedding/wedding.php";
+            url += "?guest1=" + encodeURIComponent(guest_1);
+            url += "&guest2=" + encodeURIComponent(guest_2);
+            window.location.href = url;
+        });
+    });
+</script>
 	
 <footer>  <div class="container">
 	<div class="row">
