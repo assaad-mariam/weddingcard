@@ -315,15 +315,15 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-	<!-- <nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-2">
+				<!-- <div class="col-xs-2">
 					<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
-				</div>
+				</div> -->
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
+						<!-- <li class="active"><a href="index.html">Home</a></li>
 						<li><a href="about.html">Story</a></li>
 						<li class="has-dropdown">
 							<a href="services.html">Services</a>
@@ -333,26 +333,20 @@
 								<li><a href="#">Branding</a></li>
 								<li><a href="#">API</a></li>
 							</ul>
-						</li>
-						<li class="has-dropdown">
-							<a href="gallery.html">Gallery</a>
-							<ul class="dropdown">
-								<li><a href="#">HTML5</a></li>
-								<li><a href="#">CSS3</a></li>
-								<li><a href="#">Sass</a></li>
-								<li><a href="#">jQuery</a></li>
-							</ul>
-						</li>
-						<li><a href="contact.html">Contact</a></li>
+						</li> -->
+						<li><a href="">Groom's Location</a></li>
+                        
+						<li><a href="">Bride's Location</a></li>
+                        <li><a href="#target-section">I am attending!</a></li>
 					</ul>
 				</div>
 			</div>
 			
 		</div>
-	</nav> -->
+	</nav>
 
-	<!-- <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimage.png);" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimagee.png);" data-stellar-background-ratio="0.5">
+		<!-- <div class="overlay">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
@@ -364,8 +358,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</header> -->
+		</div></div> -->
+	</header>
     <!-- <section id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimage2.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -387,8 +381,8 @@
 
 
 
-    <img src="images/testimage.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
-    <img src="images/testimage2.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
+    <!-- <img src="images/testimage.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
+    <img src="images/testimage2.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%"> -->
     <img src="images/bibleverse.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
     <img src="images/carte.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
     <img src="images/ring.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
@@ -416,18 +410,28 @@
           
           <img src="images/testimage6.png" alt="Image 1">
 
-          <button class="btn btn-custom">View Location</button><br>
+          <button class="btn btn-custom" onclick="redirectToMaps()">View Location</button><br>
           <img src="images/testimage8.png" alt="Image 2">
           
           <!-- Add more <img> tags for additional images -->
-          
+          <script>
+            function redirectToMaps() {
+              const url = 'https://maps.app.goo.gl/GMQqDyG9Jek2LFCs7';
+              window.location.href = url;
+            }
+          </script>
            
         </div>
         
     </div>
     <img src="images/presence.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
     <div class="btncustcenter">
-         <button href="form.html" class="btn btn-custom">I am attending !</button>
+         <button href="#target-section" onclick="scrollToSection()"   class="btn btn-custom">I am attending !</button>
+         <script>
+            function scrollToSection() {
+              document.getElementById('target-section').scrollIntoView({ behavior: 'smooth' });
+            }
+          </script>
     </div>
 
 
@@ -443,7 +447,7 @@
     <img src="images/footer.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
 
 
-    <section>
+    <section id="target-section">
         <div class="container1">
             <div class="form-background1">
                 <div class="form-group1"><label> Attendance Form</label></div>
