@@ -263,16 +263,23 @@
     height: auto; /* Maintain aspect ratio */
     margin: 10px;
   }
-  @media only screen and (max-width: 768px) {
+  /* @media only screen and (max-width: 768px) {
   .specific-area {
-    height: auto; /* Adjust height automatically */
+    height: auto; 
   }
 
   .image-container img {
-    width: 50%; /* Make images half the width on smaller screens */
+    width: 50%; 
+  }  } */
+  @media only screen and (max-width: 480px) {
+  .image-container img {
+    width: 100%; /* Make images full width on very small screens */
+  }
+
+  .specific-area {
+    padding: 5px; /* Adjust padding for very small screens */
   }
 }
-
 	@media (max-width: 768px) {
         .background-div2 {
             background-image: url('images/white.jpg'); /* Mobile background image */
@@ -344,23 +351,21 @@
 		</div>
 	</nav> -->
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimage.png);" data-stellar-background-ratio="0.5">
+	<!-- <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimage.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<!-- <h1>A &amp; M</h1>
-							<h2>We decided on FOREVER</h2> -->
-							<!---<div class="simply-countdown simply-countdown-one"></div>-->
+							
                     
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</header>
+	</header> -->
     <!-- <section id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimage2.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -381,6 +386,8 @@
 	
 
 
+
+    <img src="images/testimage.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
     <img src="images/testimage2.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
     <img src="images/bibleverse.png" style="max-width:100%; height: auto; display: block; margin: 0 auto;" width="100%">
     <img src="images/carte.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
@@ -407,9 +414,9 @@
             <img src="images/ceremony.png" alt="Image 1">
             <img src="images/ceremonylocation.png" alt="Image 1">
           
-          <img src="images/testimage6.png" alt="Image 1"> <br>
+          <img src="images/testimage6.png" alt="Image 1">
 
-          <button class="btn btn-custom">View Location</button>
+          <button class="btn btn-custom">View Location</button><br>
           <img src="images/testimage8.png" alt="Image 2">
           
           <!-- Add more <img> tags for additional images -->
@@ -481,6 +488,10 @@
         });
     });
 </script>
+<audio autoplay>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 	
 <footer>  <div class="container">
 	<div class="row">
