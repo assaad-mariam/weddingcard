@@ -234,7 +234,7 @@
     }
 
     .form-background1 {
-        background-image: url('images/white.jpg'); /* Replace with your background image URL */
+        background-image: url('images/black.jpg'); /* Replace with your background image URL */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -263,6 +263,19 @@
     height: auto; /* Maintain aspect ratio */
     margin: 10px;
   }
+
+  .alert-button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .alert-button:hover {
+      background-color: #0056b3;
+    }
   /* @media only screen and (max-width: 768px) {
   .specific-area {
     height: auto; 
@@ -334,9 +347,9 @@
 								<li><a href="#">API</a></li>
 							</ul>
 						</li> -->
-						<li><a href="">Groom's Location</a></li>
+						<li><a href="https://maps.app.goo.gl/CCCyUSRXyh7hptEt8">Groom's Home Location</a></li>
                         
-						<li><a href="">Bride's Location</a></li>
+						<li><a href="">Bride's Home Location</a></li>
                         <li><a href="#target-section">I am attending!</a></li>
 					</ul>
 				</div>
@@ -346,7 +359,7 @@
 	</nav>
 
 	<!-- <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/testimagee.png);" data-stellar-background-ratio="0.5">
-		<!-- <div class="overlay">
+		<div class="overlay">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
@@ -464,10 +477,17 @@
                     <input type="text" id="number" name="number" required>
                 </div>
                 <div class="form-group1">
-                    <button type="submit" id="submitbutton">Submit</button>
+                    <button type="submit" onclick="showAlert()" class="alert-button" id="submitbutton">Submit</button>
+                    <script>
+                        function showAlert() {
+                          alert('Thank you! Your reservation is booked');
+                        }
+                      </script>
                 </div>
                 <!-- Message to show when saving data -->
                 <div class="saving-message" id="savingMessage" style="display: none;">Saving Your names!</div>
+
+
             </div>
         </div>
     </section>
