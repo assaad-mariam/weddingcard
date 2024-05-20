@@ -320,6 +320,23 @@
         color: #007bff; /* Blue color */
     }
 
+    :root {
+      --background-color: white;
+      --text-color: black;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background-color: white !important;
+        --text-color: black !important;
+      }
+    }
+
 	</style>
 
 	</head>
