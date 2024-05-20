@@ -940,8 +940,8 @@ form label {
 .simply-countdown > .simply-section {
   /* coutndown blocks */
   display: inline-block;
-  width: 76px;
-  height: 76px;
+  width: 74px;
+  height: 81px;
   background: rgba(186, 192, 197, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
