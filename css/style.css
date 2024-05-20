@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    height: 750px;
+    height: 950px;
   }
 }
 .fh5co-cover .display-t,
@@ -940,8 +940,8 @@ form label {
 .simply-countdown > .simply-section {
   /* coutndown blocks */
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background: rgba(186, 192, 197, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
@@ -1065,7 +1065,7 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Segoe Script", Arial, serif;
+  font-family: "Segoe Script"; /*Arial, serif;*/
   color: #0f0f0f;
   font-size: 30px;
 }
