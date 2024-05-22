@@ -62,6 +62,13 @@
         font-size: 20px;
         color: #333;
     }
+    #mute-button {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  z-index: 999;
+}
+
     body {
   color: #333; /* Set text color to a dark color */
   background-color: #fff; /* Set background color to white */
@@ -480,7 +487,40 @@
     <img src="images/footer.jpg" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%"><br>
 
 
+    <audio id="background-music" autoplay loop>
+        <source src="a-thousand-years.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="mute-button">Mute/Unmute</button>
 
+    <!-- JavaScript Section -->
+    <script>
+        var audio = document.getElementById("background-music");
+        var muteButton = document.getElementById("mute-button");
+
+        // Function to update button position while scrolling
+        // function updateButtonPosition() {
+        //     var scrollTop = window.scrollY || window.pageYOffset;
+        //     muteButton.style.top = (scrollTop + window.innerHeight - 50) + "px"; // Adjust 50 to your desired offset
+        // }
+
+        // Event listener for button click to toggle mute/unmute
+        muteButton.addEventListener("click", function() {
+            if (audio.paused) {
+                audio.play();
+                muteButton.textContent = "Mute";
+            } else {
+                audio.pause();
+                muteButton.textContent = "Unmute";
+            }
+        });
+
+        // Event listener for scroll to update button position
+        //window.addEventListener("scroll", updateButtonPosition);
+
+        // Initial call to update button position
+        //updateButtonPosition();
+    </script>
 
     <div class="container">
         <div class="row">
