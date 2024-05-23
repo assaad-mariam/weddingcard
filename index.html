@@ -498,11 +498,11 @@
         var audio = document.getElementById("background-music");
         var muteButton = document.getElementById("mute-button");
 
-        // Function to update button position while scrolling
-        // function updateButtonPosition() {
-        //     var scrollTop = window.scrollY || window.pageYOffset;
-        //     muteButton.style.top = (scrollTop + window.innerHeight - 50) + "px"; // Adjust 50 to your desired offset
-        // }
+         //Function to update button position while scrolling
+         function updateButtonPosition() {
+            var scrollTop = window.scrollY || window.pageYOffset;
+           muteButton.style.top = (scrollTop + window.innerHeight - 50) + "px"; // Adjust 50 to your desired offset
+         }
 
         // Event listener for button click to toggle mute/unmute
         muteButton.addEventListener("click", function() {
@@ -516,10 +516,10 @@
         });
 
         // Event listener for scroll to update button position
-        //window.addEventListener("scroll", updateButtonPosition);
+        window.addEventListener("scroll", updateButtonPosition);
 
-        // Initial call to update button position
-        //updateButtonPosition();
+         //Initial call to update button position
+        updateButtonPosition();
     </script>
 
     <div class="container">
