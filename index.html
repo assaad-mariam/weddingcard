@@ -610,11 +610,11 @@
     Your browser does not support the audio element.
 </audio> -->
 
-<iframe src="musicw.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+<!-- <iframe src="musicw.mp3" allow="autoplay" style="display:none" id="iframeAudio">
 </iframe>
 <audio autoplay loop  id="playAudio">
     <source src="musicw.mp3">
-</audio>
+</audio> 
 <script>
 var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
   if (!isChrome){
@@ -624,7 +624,17 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
       $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
   }
 
-</script>
+</script> -->
+
+
+<iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<audio id="player" autoplay loop>
+    <source src="musicw.mp3" type="audio/mp3"> 
+</audio>
+
+
+
+
 
 
 
