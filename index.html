@@ -391,12 +391,42 @@
         @media (max-width: 480px) {
             .button-overlay {
                 font-size: 1.3em; /* Even smaller font on very small screens */
-                padding: 15px 30px; /* Smaller padding on very small screens */
+                padding: 10px 20px; /* Smaller padding on very small screens */
                 top: 80%; /* Further adjust the position for very small screens */
                 left: 50%;
                 transform: translate(-50%, -80%);
             }
         }
+        .containertt {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .containertt img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        .countdown-overlaytt {
+            position: absolute;
+            top: 85%; /* Adjust to position the countdown vertically */
+            left: 50%; /* Adjust to position the countdown horizontally */
+            transform: translate(-50%, -50%); /* Center the countdown */
+            color: white;
+            background-color: rgba(192, 188, 188, 0); /* Optional: background color for better visibility */
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 2em; /* Adjust font size */
+            text-align: center;
+        }
+
+
+
+
+
 	</style>
 
 	</head>
@@ -531,19 +561,24 @@
 	<!-- <div class="centered">
         <p>Let your little ones rest peacefully at home</p>
     </div> -->
-    <img src="images/qrcode.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
+    <!-- <img src="images/qrcode.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%"> -->
     <div class="containerb">
         <img src="images/qrcode.png" alt="Footer Image">
         <a href="https://forms.gle/My8muEc6a1gwSwuc6" class="button-overlay">Or Upload Here!</a>
     </div>
-
+    <div class="containertt">
+        <img src="images/footer.jpg" alt="Footer Image">
+        <div class="countdown-overlaytt">
+            <div class="simply-countdown simply-countdown-one"></div>
+        </div>
+    </div>
 
 
 
     <!-- <div class="background-div2">
         <img src="images/am.png" alt="Overlay Image" class="overlay-image2">
     </div></section>-->
-    <img src="images/footer.jpg" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%"><br>
+    <!-- <img src="images/footer.jpg" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%"><br>-->
 
     
 
@@ -552,7 +587,7 @@
    
    
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="display-t">
@@ -563,7 +598,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>  -->
 <!-------------------------------------------------------------------->
 
 <audio id="background-music" autoplay loop>
