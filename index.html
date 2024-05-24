@@ -556,7 +556,7 @@
     </div> 
 <!-------------------------------------------------------------------->
 
-<audio id="background-music" autoplay="yes" loop>
+<!-- <audio id="background-music" loop>
     <source src="musicw.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
@@ -565,8 +565,57 @@
     <img id="mute-icon" src="images/mute.png" alt="Mute/Unmute">
 </button>
 
-<!-- JavaScript Section -->
+
 <script>
+    var audio = document.getElementById("background-music");
+    var muteButton = document.getElementById("mute-button");
+    var muteIcon = document.getElementById("mute-icon");
+
+    // Function to update button position while scrolling
+    function updateButtonPosition() {
+        var scrollTop = window.scrollY || window.pageYOffset;
+        muteButton.style.top = (scrollTop + window.innerHeight - 70) + "px"; // Adjust 70 to your desired offset
+    }
+
+    function tryAutoplay() {
+            audio.play().then(() => {
+                muteIcon.src = "images/mute.png"; // Change to unmute icon
+            }).catch((error) => {
+                console.log('Autoplay failed:', error);
+                muteIcon.src = "images/unmute.png"; // Default to mute icon
+            });
+        }
+
+    // Event listener for button click to toggle mute/unmute
+    muteButton.addEventListener("click", function() {
+        if (audio.paused) {
+            audio.play();
+            muteIcon.src = "images/unmute.png"; // Change to mute icon
+        } else {
+            audio.pause();
+            muteIcon.src = "images/mute.png"; // Change to unmute icon
+        }
+    }); 
+
+
+
+    // Event listener for scroll to update button positio
+    window.addEventListener("scroll", updateButtonPosition);
+    tryAutoplay();
+    // Initial call to update button position
+    updateButtonPosition();
+</script>-->
+<audio id="background-music" autoplay loop>
+    <source src="musicw.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- <button id="mute-button">
+    <img id="mute-icon" src="images/mute.png" alt="Mute/Unmute">
+</button>    -->
+
+<!-- JavaScript Section -->
+<!-- <script>
     var audio = document.getElementById("background-music");
     var muteButton = document.getElementById("mute-button");
     var muteIcon = document.getElementById("mute-icon");
@@ -579,24 +628,35 @@
 
     // Event listener for button click to toggle mute/unmute
     muteButton.addEventListener("click", function() {
-        if (audio.paused) {
+        if (audio.muted) {
+            audio.muted = false;
             audio.play();
-            muteIcon.src = "images/unmute.png"; // Change to mute icon
+            muteIcon.src = "images/unmute.png"; // Change to unmute icon
         } else {
+            audio.muted = true;
             audio.pause();
-            muteIcon.src = "images/mute.png"; // Change to unmute icon
+            muteIcon.src = "images/mute.png"; // Change to mute icon
         }
     });
 
-
-
-    // Event listener for scroll to update button positio
-    window.addEventListener("scroll", updateButtonPosition);
-
     // Initial call to update button position
     updateButtonPosition();
-</script>
 
+    // Event listener for scroll to update button position
+    window.addEventListener("scroll", updateButtonPosition);
+
+    // Check if the audio can autoplay
+    document.addEventListener('DOMContentLoaded', function() {
+        audio.play().then(() => {
+            audio.muted = false; // Unmute after ensuring autoplay works
+            muteIcon.src = "images/unmute.png"; // Change to unmute icon
+        }).catch((error) => {
+            console.log('Autoplay failed:', error);
+            audio.muted = true; // Keep it muted if autoplay fails
+            muteIcon.src = "images/mute.png"; // Keep mute icon
+        });
+    });
+</script> -->
 
 
 
@@ -620,11 +680,11 @@
                 </div>
                 <div class="form-group1">
                     <button type="submit" onclick="showAlert()" class="alert-button" id="submitbutton">Submit</button>
-                    <script>
+                    <!-- <script>
                         function showAlert() {
                           alert('Thank you! Your reservation is booked');
                         }
-                      </script>
+                      </script> -->
                 </div>
                 <!-- Message to show when saving data -->
                 <div class="saving-message" id="savingMessage" style="display: none;">Saving Your names!</div>
@@ -654,10 +714,7 @@
         });
     });
 </script>
-<audio autoplay>
-    <source src="audio.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+
 	
 <!-- <footer>  <div class="container">
 	<div class="row">
