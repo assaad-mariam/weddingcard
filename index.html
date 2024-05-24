@@ -605,14 +605,32 @@
     // Initial call to update button position
     updateButtonPosition();
 </script>-->
-<audio id="background-music" autoplay loop>
+<audio id="background-music" autoplay loop muted>
     <source src="musicw.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
+<iframe src="musicw.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe>
+<audio autoplay loop  id="playAudio">
+    <source src="musicw.mp3">
+</audio>
+<script>
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#iframeAudio').remove()
+  }
+  else {
+      $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
+
+</script>
+
+
+
 <!-- <button id="mute-button">
     <img id="mute-icon" src="images/mute.png" alt="Mute/Unmute">
-</button>    -->
+</button> -->
 
 <!-- JavaScript Section -->
 <!-- <script>
