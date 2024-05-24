@@ -71,8 +71,8 @@
             cursor: pointer;
         }
         #mute-button img {
-            width: 35px; /* Adjust the size of the image */
-            height: 35px; /* Adjust the size of the image */
+            width: 40px; /* Adjust the size of the image */
+            height: 40px; /* Adjust the size of the image */
         }
 
     body {
@@ -610,7 +610,7 @@
     Your browser does not support the audio element.
 </audio>
 
-<iframe src="musicw.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+<!-- <iframe src="musicw.mp3" allow="autoplay" style="display:none" id="iframeAudio">
 </iframe>
 <audio autoplay loop  id="playAudio">
     <source src="musicw.mp3">
@@ -624,16 +624,16 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
       $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
   }
 
-</script>
+</script> -->
 
 
 
-<!-- <button id="mute-button">
+<button id="mute-button">
     <img id="mute-icon" src="images/mute.png" alt="Mute/Unmute">
-</button> -->
+</button>
 
 <!-- JavaScript Section -->
-<!-- <script>
+<script>
     var audio = document.getElementById("background-music");
     var muteButton = document.getElementById("mute-button");
     var muteIcon = document.getElementById("mute-icon");
@@ -674,7 +674,7 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
             muteIcon.src = "images/mute.png"; // Keep mute icon
         });
     });
-</script> -->
+</script>
 
 
 
