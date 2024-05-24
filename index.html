@@ -344,6 +344,53 @@
       }
     }
 
+    .containerb {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .containerb img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .button-overlay {
+            position: absolute;
+            top: 50%; /* Adjust to position the button vertically */
+            left: 50%; /* Adjust to position the button horizontally */
+            transform: translate(-50%, -50%); /* Center the button */
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            cursor: pointer;
+            font-size: 2em;
+            border-radius: 10px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .button-overlay {
+                font-size: 1.5em; /* Slightly smaller font on mobile */
+                padding: 15px 30px; /* Slightly smaller padding on mobile */
+                top: 80%; /* Adjust the position for mobile view */
+                left: 50%;
+                transform: translate(-50%, -70%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-overlay {
+                font-size: 1.3em; /* Even smaller font on very small screens */
+                padding: 15px 30px; /* Smaller padding on very small screens */
+                top: 80%; /* Further adjust the position for very small screens */
+                left: 50%;
+                transform: translate(-50%, -80%);
+            }
+        }
 	</style>
 
 	</head>
@@ -479,11 +526,21 @@
         <p>Let your little ones rest peacefully at home</p>
     </div> -->
     <img src="images/qrcode.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%">
-    
+    <div class="containerb">
+        <img src="images/qrcode.png" alt="Footer Image">
+        <a href="https://forms.gle/My8muEc6a1gwSwuc6" class="button-overlay">Or Upload Here!</a>
+    </div>
+
+
+
+
     <!-- <div class="background-div2">
         <img src="images/am.png" alt="Overlay Image" class="overlay-image2">
     </div></section>-->
     <img src="images/footer.jpg" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" width="100%"><br>
+
+    
+
 
 
     <audio id="background-music" autoplay loop>
@@ -533,6 +590,13 @@
             </div>
         </div>
     </div>
+<!-------------------------------------------------------------------->
+
+
+
+
+
+
 
     <!-- <section id="target-section"> -->
         <div id="target-section" class="container1">
