@@ -685,17 +685,25 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
             <div class="form-background1">
                 <div class="form-group1"><label> Attendance Form</label></div>
                 <div class="form-group1">
-                    <label for="guest1">Full Name (Guest 1)</label>
+                    <label for="guest1">First guest Full Name</label>
                     <input type="text" id="guest1" name="guest1" required>
                 </div>
                 <div class="form-group1">
-                    <label for="guest2">Full Name (Guest 2)</label>
+                    <label for="guest2">Second Guest Full Name</label>
                     <input type="text" id="guest2" name="guest2" required>
                 </div>
                 <div class="form-group1">
                     <label for="number">Phone Number</label>
-                    <input type="text" id="number" name="number" required>
+                    <input type="text" id="number" name="number" required><br>
                 </div>
+
+
+                    <div>
+                        <input type="radio" id="attending" name="attendance" value="attending">
+                      <label for="attending" style="color: rgb(255, 255, 255);">Attending</label>
+                      <input type="radio" id="not-attending" name="attendance" value="not-attending">
+                        <label for="not-attending" style="color: rgb(255, 255, 255);">Not attending</label>
+                </div><br>
                 <div class="form-group1">
                     <button type="submit" onclick="showAlert()" class="alert-button" id="submitbutton">Submit</button>
                     <!-- <script>
@@ -714,23 +722,31 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $("#submitbutton").click(function(){
-            var guest_1 = $("#guest1").val();
-            var guest_2 = $("#guest2").val();
-            var number = $("#number").val();
+$(document).ready(function(){
+    $("#submitbutton").click(function(){
+        var guest_1 = $("#guest1").val();
+        var guest_2 = $("#guest2").val();
+        var number = $("#number").val();
 
-            // Show the saving message
-            $("#savingMessage").show();
+        // Check if any of the fields are empty
+        if (!guest_1 || !guest_2 || !number) {
+            // Display the error message inside the #savingMessage div
+            $("#savingMessage").text("All fields are required. Please fill in all the details.").show();
+            return; // Prevent the form from being submitted
+        }
 
-            // Redirect to wedding.php with data in query parameters
-            var url = "http://zeta.infinityfreeapp.com/wedding/wedding.php";
-            url += "?guest1=" + encodeURIComponent(guest_1);
-            url += "&guest2=" + encodeURIComponent(guest_2);
-            url += "&number=" + encodeURIComponent(number);
-            window.location.href = url;
-        });
+        // If all fields are filled, show the saving message
+        $("#savingMessage").text("Saving...").show();
+
+        // Redirect to wedding.php with data in query parameters
+        var url = "http://zeta.infinityfreeapp.com/wedding/wedding.php";
+        url += "?guest1=" + encodeURIComponent(guest_1);
+        url += "&guest2=" + encodeURIComponent(guest_2);
+        url += "&number=" + encodeURIComponent(number);
+        window.location.href = url;
     });
+});
+
 </script>
 
 	
