@@ -685,11 +685,11 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
             <div class="form-background1">
                 <div class="form-group1"><label> Attendance Form</label></div>
                 <div class="form-group1">
-                    <label for="guest1">First guest Full Name</label>
+                    <label for="guest1">First guest Name</label>
                     <input type="text" id="guest1" name="guest1" required>
                 </div>
                 <div class="form-group1">
-                    <label for="guest2">Second Guest Full Name</label>
+                    <label for="guest2">Second Guest Name</label>
                     <input type="text" id="guest2" name="guest2" required>
                 </div>
                 <div class="form-group1">
@@ -698,12 +698,13 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
                 </div>
 
 
-                    <div>
-                        <input type="radio" id="attending" name="attendance" value="attending">
-                      <label for="attending" style="color: rgb(255, 255, 255);">Attending</label>
-                      <input type="radio" id="not-attending" name="attendance" value="not-attending">
-                        <label for="not-attending" style="color: rgb(255, 255, 255);">Not attending</label>
+                <div>
+                    <input type="radio" id="attending" name="attendance" value="attending" checked>
+                    <label for="attending" style="color: rgb(255, 255, 255);">Attending</label>
+                    <input type="radio" id="not-attending" name="attendance" value="not-attending">
+                    <label for="not-attending" style="color: rgb(255, 255, 255);">Not attending</label>
                 </div><br>
+                
                 <div class="form-group1">
                     <button type="submit" onclick="showAlert()" class="alert-button" id="submitbutton">Submit</button>
                     <!-- <script>
@@ -727,6 +728,7 @@ $(document).ready(function(){
         var guest_1 = $("#guest1").val();
         var guest_2 = $("#guest2").val();
         var number = $("#number").val();
+        var attendance = $("input[name='attendance']:checked").val(); // Get the selected radio button value
 
         // Check if any of the fields are empty
         if (!guest_1 || !guest_2 || !number) {
@@ -743,9 +745,11 @@ $(document).ready(function(){
         url += "?guest1=" + encodeURIComponent(guest_1);
         url += "&guest2=" + encodeURIComponent(guest_2);
         url += "&number=" + encodeURIComponent(number);
+        url += "&attendance=" + encodeURIComponent(attendance); // Include the attendance value
         window.location.href = url;
     });
 });
+
 
 </script>
 
