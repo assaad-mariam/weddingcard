@@ -399,6 +399,12 @@
                 transform: translate(-50%, -80%);
             }
         }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
        
 	</style>
 
@@ -694,7 +700,8 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
                 </div>
                 <div class="form-group1">
                     <label for="number">Phone Number</label>
-                    <input type="text" id="number" name="number" required><br>
+                    <input type="text" id="number" name="number" pattern="\d{8}" required title="Please enter an 8-digit number" required><br>
+                    <p id="messagephone"></p>
                 </div>
 
 
@@ -706,7 +713,7 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
                 </div><br>
                 
                 <div class="form-group1">
-                    <button type="submit" onclick="showAlert()" class="alert-button" id="submitbutton">Submit</button>
+                    <button type="submit" class="alert-button" id="submitbutton">Submit</button>
                     <!-- <script>
                         function showAlert() {
                           alert('Thank you! Your reservation is booked');
@@ -723,12 +730,26 @@ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+document.getElementById('target-section').addEventListener('input', function(event) {
+            const messageElement = document.getElementById('messagephone');
+            const phoneInput = document.getElementById('number');
+
+            if (phoneInput.checkValidity()) {
+                messageElement.textContent = 'Phone number is valid';
+                messageElement.className = 'success';
+            } else {
+                messageElement.textContent = 'Phone number is invalid. Please enter an 8-digit number.';
+                messageElement.className = 'error';
+                event.preventDefault(); // Prevent form submission if the input is invalid
+            }
+        });
 $(document).ready(function(){
     $("#submitbutton").click(function(){
         var guest_1 = $("#guest1").val();
         var guest_2 = $("#guest2").val();
         var number = $("#number").val();
         var attendance = $("input[name='attendance']:checked").val(); // Get the selected radio button value
+
 
         // Check if any of the fields are empty
         if (!guest_1 || !guest_2 || !number) {
