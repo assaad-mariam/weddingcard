@@ -747,13 +747,13 @@ document.getElementById('target-section').addEventListener('input', function(eve
 $(document).ready(function(){
     $("#submitbutton").click(function(){
         var guest_1 = $("#guest1").val();
-        var guest_2 = $("#guest2").val();
+        // var guest_2 = $("#guest2").val();
         var number = $("#number").val();
         var attendance = $("input[name='attendance']:checked").val(); // Get the selected radio button value
 
 
         // Check if any of the fields are empty
-        if (!guest_1 || !guest_2 || !number) {
+        if (!guest_1 || !number) {
             // Display the error message inside the #savingMessage div
             $("#savingMessage").text("All fields are required. Please fill in all the details.").show();
             return; // Prevent the form from being submitted
